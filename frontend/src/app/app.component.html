@@ -1,0 +1,21 @@
+<h1>{{ title }}</h1>
+<nav mat-tab-nav-bar>
+  <a mat-tab-link
+     routerLink="/search">
+    Search
+  </a>
+  <a mat-tab-link
+     routerLink="/indexer">
+    Indexer
+  </a>
+  <a mat-tab-link
+     routerLink="/files-indexer">
+    Indexer with File Upload
+  </a>
+</nav>
+<!--<nav>-->
+  <!--<a routerLink="/search">Search</a>-->
+  <!--<a routerLink="/indexer">Indexer</a>-->
+<!--</nav>-->
+<router-outlet></router-outlet>
+<app-messages></app-messages>

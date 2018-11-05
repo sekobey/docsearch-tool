@@ -1,0 +1,6 @@
+**build**
+docsearch-tool/**/*.pdf
+**.gradle**
+**.idea**
+**/*.class
+**/*.jar

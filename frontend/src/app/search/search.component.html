@@ -1,0 +1,31 @@
+<div>
+  <input #searchBox (keyup)="suggest(searchBox.value)"/>
+
+  <ul *ngIf="!searchButtonClicked" class="suggest-result">
+    <li *ngFor="let result of suggestResults$ | async">
+      <a href="{{result.url}}" target="_blank">
+        In Chapter: {{result.title}} of File: {{result.fileName}} of Version: {{result.version}}
+      </a>
+    </li>
+  </ul>
+</div>
+<div>
+  <button (click)="search(searchBox.value)">Search</button>
+</div>
+<div *ngIf="searchResults.size">
+  <h2>Results</h2>
+  <mat-list>
+    <div *ngFor='let version of getKeys()'>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Version: {{version}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div *ngFor="let response of searchResults.get(version)">
+          <a href="{{response.url}}" target="_blank">{{response.fileName}}</a>
+        </div>
+      </mat-expansion-panel>
+    </div>
+  </mat-list>
+</div>

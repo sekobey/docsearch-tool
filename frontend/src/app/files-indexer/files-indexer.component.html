@@ -1,0 +1,15 @@
+<div>
+  <input type="file" (change)="selectFile($event)" multiple/>
+</div>
+<div>
+  <label>
+    Metadata for the files:<br/>
+    Format: Version, PDF File Name, Web Link Of The File.<br/>
+    Ex: 11.2.0, CRM.Web_InstallationGuide.pdf, https://docs.google.com/...<br />
+    <textarea #indexableItems rows="10" cols="100"></textarea>
+  </label>
+</div>
+<button (click)="index(indexableItems.value)"
+        [disabled]="!selectedFiles && !indexableItems.value">
+  Index it !!!
+</button>
